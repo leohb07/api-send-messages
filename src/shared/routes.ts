@@ -1,6 +1,7 @@
 import { Request, Response, Router } from "express";
 import { name, version } from "../../package.json";
 import { sendEmailRoutes } from "../modules/send-email/send-email.routes";
+import { sendWhatsappRoutes } from "../modules/send-whatsapp/send-whatsapp.routes";
 
 const routes = Router();
 
@@ -16,5 +17,6 @@ routes.get("/version", (_, res: Response) => {
 });
 
 routes.use("/email", sendEmailRoutes);
+routes.use("/whatsapp", sendWhatsappRoutes);
 
 export { routes };
